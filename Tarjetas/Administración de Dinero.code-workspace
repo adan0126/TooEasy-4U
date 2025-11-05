@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "../Administración de Dinero"
+		},
+		{
+			"path": "../Cuentas Bancarias"
+		},
+		{
+			"path": "../Deudas y Creditos"
+		},
+		{
+			"path": "../Fundamentos"
+		},
+		{
+			"path": "../Lecciones"
+		},
+		{
+			"path": "."
+		}
+	]
+}
