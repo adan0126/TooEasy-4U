@@ -129,3 +129,12 @@ body {
 .lista-temas button:hover {
   opacity: 0.8;
 }
+
+.tema {
+  text-decoration: none;
+  color: black;
+}
+
+.tema a:hover {
+  text-decoration: underline;
+}
