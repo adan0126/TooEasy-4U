@@ -174,3 +174,36 @@ body {
   .container{ padding: 0 10px; }
   .card-front img{ width: 100%; }
 }
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #a0a0a0;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 26px;
+  color: white;
+}
+.logo p {
+  margin: 0;
+  font-size: 13px;
+  color: white;
+}
+.nav a {
+  color: white;
+  margin-left: 18px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.nav a:hover {
+  text-decoration: underline;
+}
