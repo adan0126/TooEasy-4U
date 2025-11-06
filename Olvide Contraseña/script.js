@@ -1,37 +1,47 @@
-/* olvidoContrasena.js - Verificación de palabra de seguridad Too-Easy */
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("formRecuperar");
+  const emailInput = document.getElementById("email");
+  const btn = document.getElementById("btnEnviar");
+  const msg = document.getElementById("msg");
 
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.querySelector('.formulario');
-  const inputRespuesta = document.getElementById('Nombre');
-
-  form.addEventListener('submit', (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
+    msg.textContent = "";
+    btn.disabled = true;
 
-    const respuestaIngresada = inputRespuesta.value.trim();
-    if (!respuestaIngresada) {
-      alert('⚠️ Ingresa tu palabra clave para continuar.');
+    const { domain, clientId, connection } = window.AUTH0 || {};
+    const email = emailInput.value.trim();
+
+    if (!domain || !clientId || !connection) {
+      msg.textContent = "Configuración Auth0 faltante.";
+      msg.style.color = "crimson";
+      btn.disabled = false;
       return;
     }
 
-    // Leer usuarios del localStorage (por ahora)
-    const usuarios = JSON.parse(localStorage.getItem('te_users') || '[]');
+    try {
+      const res = await fetch(`https://${domain}/dbconnections/change_password`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          client_id: clientId,
+          email,
+          connection
+        })
+      });
 
-    if (usuarios.length === 0) {
-      alert('❌ No hay usuarios registrados en este dispositivo.');
-      return;
-    }
+      // La API responde texto; no es JSON
+      await res.text();
 
-    // Buscar usuario con esa palabra de seguridad
-    const usuarioEncontrado = usuarios.find(
-      (u) => u.seguridad?.toLowerCase() === respuestaIngresada.toLowerCase()
-    );
-
-    if (usuarioEncontrado) {
-      alert(`✅ Verificación exitosa. Bienvenido/a, ${usuarioEncontrado.nombre}!`);
-      // Redirigir a la pantalla de inicio (o cambio de contraseña)
-      window.location.href = '/Pantalla sesion iniciada/index.html';
-    } else {
-      alert('❌ Palabra clave incorrecta. Intenta de nuevo.');
+      msg.textContent = "📩 Si el correo existe, se enviará un enlace para restablecer tu contraseña.";
+      msg.style.color = "green";
+      emailInput.value = "";
+    } catch (err) {
+      console.error(err);
+      msg.textContent = "❌ No se pudo enviar el correo. Intenta más tarde.";
+      msg.style.color = "crimson";
+    } finally {
+      btn.disabled = false;
     }
   });
 });

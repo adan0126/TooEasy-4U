@@ -1,21 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recuperar contraseña</title>
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-    <div class="container">
-    <form class="formulario">
-      <h1>Pregunta de verificacion</h1>
+  <div class="container">
+    <h1>Recuperar contraseña</h1>
 
-      <label for="username">Ingresa tu palabra clave:</label>
-      <input type="text" id="Nombre" placeholder="Respuesta">
-
-      <a href="/Pantalla sesion iniciada/index.html"><button type="submit">VERIFICAR</button></a>
+    <form id="formRecuperar" class="formulario">
+      <label for="email">Correo registrado</label>
+      <input type="email" id="email" placeholder="usuario@ejemplo.com" required />
+      <button id="btnEnviar" type="submit">Enviar enlace</button>
     </form>
-    <script src="./script.js"></script>
+
+    <p id="msg" class="aviso"></p>
+    <a href="../Iniciar Sesion/index.html">Volver a iniciar sesión</a>
+  </div>
+
+  <!-- carga config ANTES del script -->
+  <script src="../../auth0.config.js"></script>
+  <script src="./script.js"></script>
 </body>
 </html>

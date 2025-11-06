@@ -46,3 +46,33 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// ...tus validaciones previas
+const email = document.getElementById('email').value.trim();
+const password = document.getElementById('contraseña').value.trim();
+
+try {
+  const { domain, clientId, connection } = window.AUTH0;
+  const r = await fetch(`https://${domain}/dbconnections/signup`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      client_id: clientId,
+      email,
+      password,
+      connection
+    })
+  });
+
+  // Puede devolver 200/OK o 400 si ya existe; maneja ambos casos
+  const data = await r.json().catch(() => ({}));
+  if (!r.ok && data?.name !== "BadRequestError" && !String(data?.message).includes("already exists")) {
+    alert("No se pudo registrar en Auth0. Intenta más tarde.");
+    return;
+  }
+} catch (e) {
+  console.error(e);
+  alert("No se pudo registrar en Auth0. Intenta más tarde.");
+  return;
+}
+
+// continúa con tu guardado en localStorage como ya lo haces…
