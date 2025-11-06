@@ -22,6 +22,20 @@ var textosCard4 = [
     "También hay gastos imprevistos, que surgen sin planearlos, como una reparación o una emergencia médica. Por eso, es importante reservar parte de los ingresos para poder afrontarlos sin endeudarse."
 ];
 
+var textosCard5 = [
+  "La clave de una buena salud financiera está en mantener un equilibrio entre lo que ganas y lo que gastas. Si tus ingresos son mayores que tus gastos, tendrás un excedente, lo que te permite ahorrar o invertir.",
+  "Un presupuesto personal sirve precisamente para vigilar este equilibrio: registrar tus ingresos y tus egresos te ayuda a identificar en qué se va tu dinero y cómo puedes mejorar tu manejo financiero."
+]
+
+var textosCard6 = [
+  "Imagina que Laura recibe cada mes un salario de $8,000 pesos (ingreso fijo). Además, vende dulces los fines de semana y obtiene $600 pesos extra (ingreso variable). Cada mes paga $3,000 de renta, $1,000 en transporte y $2,000 en comida (gastos fijos y variables).",
+  "En este caso:",
+  "   • Ingresos totales: $8,600",
+  "   • Gastos totales: $6,000",
+  "   • Saldo disponible o excedente: $2,600",
+  "Ese excedente puede destinarse al ahorro o a una meta financiera. Si Laura no llevara el registro, quizá gastaría sin darse cuenta más de lo que gana, lo que pondría en riesgo su estabilidad económica."
+]
+
 // ====== Función que muestra el contenido de los arreglos ======
 function mostrarTextoCard(textos, idContenedor) {
   var contenedor = document.getElementById(idContenedor);
@@ -48,6 +62,8 @@ mostrarTextoCard(textosCard1, "texto-card1");
 mostrarTextoCard(textosCard2, "texto-card2");
 mostrarTextoCard(textosCard3, "texto-card3");
 mostrarTextoCard(textosCard4, "texto-card4");
+mostrarTextoCard(textosCard5, "texto-card5");
+mostrarTextoCard(textosCard6, "texto-card6");
 
 // Evento: al hacer clic, girar la card
 cards.forEach((card) => {
