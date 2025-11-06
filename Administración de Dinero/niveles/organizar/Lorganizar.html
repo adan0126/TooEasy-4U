@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Administración de Dinero — [Organizar]</title>
+  <link rel="stylesheet" href="./css/cards.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <h1>TOO EASY</h1>
+      <p>JUEGA HOY, TRIUNFA MAÑANA</p>
+    </div>
+    <nav class="nav">
+      <a href="../../../Pantalla sesion iniciada/index.html">INICIO</a>
+      <a href="../../../Lecciones/index.html">LECCIONES</a>
+      <a href="../../../Perfil/index.html">PERFIL</a>
+      <a href="../../index.html">⬅ Volver al módulo</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <button class="arrow-btn" id="prevCard">◄</button>
+
+    <!-- 6 tarjetas; el JS inyecta el texto de cada “card-back” -->
+    <section class="card" id="card1">
+      <div class="card-inner">
+        <div class="card-front"><h2 class="card-title"></h2><div class="card-image"></div></div>
+        <div class="card-back"><div class="card-text" id="texto-card1"></div></div>
+      </div>
+    </section>
+
+    <section class="card" id="card2">
+      <div class="card-inner">
+        <div class="card-front"><h2 class="card-title"></h2><div class="card-image"></div></div>
+        <div class="card-back"><div class="card-text" id="texto-card2"></div></div>
+      </div>
+    </section>
+
+    <section class="card" id="card3">
+      <div class="card-inner">
+        <div class="card-front"><h2 class="card-title"></h2><div class="card-image"></div></div>
+        <div class="card-back"><div class="card-text" id="texto-card3"></div></div>
+      </div>
+    </section>
+
+    <section class="card" id="card4">
+      <div class="card-inner">
+        <div class="card-front"><h2 class="card-title"></h2><div class="card-image"></div></div>
+        <div class="card-back"><div class="card-text" id="texto-card4"></div></div>
+      </div>
+    </section>
+
+    <section class="card" id="card5">
+      <div class="card-inner">
+        <div class="card-front"><h2 class="card-title"></h2><div class="card-image"></div></div>
+        <div class="card-back"><div class="card-text" id="texto-card5"></div></div>
+      </div>
+    </section>
+
+    <section class="card" id="card6">
+      <div class="card-inner">
+        <div class="card-front"><h2 class="card-title"></h2><div class="card-image"></div></div>
+        <div class="card-back"><div class="card-text" id="texto-card6"></div></div>
+      </div>
+    </section>
+
+    <button class="arrow-btn" id="nextCard">►</button>
+
+    <div class="buttons">
+      <div class="preguntas"><a href="./POrganizar.html">Preguntas</a></div>
+      <div class="regresar"><a href="../../index.html">Regresar</a></div>
+    </div>
+  </main>
+
+  <script src="./js/card.js"></script>
+</body>
+</html>
