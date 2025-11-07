@@ -1,0 +1,374 @@
+/* --- ESTRUCTURA GENERAL --- */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+:root{
+  --accent: #B6823E; /* desde Fundamentos/style.css */
+  --accent-dark: #96603a;
+  --muted-bg: #f0f3f5;
+  --card-radius: 12px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--muted-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+}
+
+.container {
+  position: relative;
+  width: 840px;
+  max-width: 95%;
+}
+
+.card {
+  perspective: 1000px; /* Necesario para el efecto 3D */
+  width: 100%;
+  height: 420px;
+  margin: 0 auto 18px auto;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: white;
+  border-radius: var(--card-radius);
+  box-shadow: 0 6px 20px rgba(16,24,40,0.08);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+.card-front img {
+  width: 80%;
+  max-width: 360px;
+  border-radius: 8px;
+}
+
+/* Coloca el título en la parte superior de la card */
+.card-front{
+  justify-content: flex-start; /* empuja contenido hacia arriba */
+  padding-top: 20px;
+}
+
+.card-title{
+  font-size: 35px;
+  color: var(--accent);
+  margin: 6px 0 14px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.card-back {
+  background-color: var(--accent);
+  color: white;
+  transform: rotateY(180deg);
+  text-align: justify;
+  overflow-y: auto;
+}
+
+.card-back p {
+  margin: 10px 0;
+  font-size: 25px;
+}
+
+/* ====== BOTONES A LOS COSTADOS ====== */
+.arrow-btn {
+  position: absolute;
+  top: 50%;                       /* Centra verticalmente */
+  transform: translateY(-50%);    /* Ajusta la posición para estar justo en el centro */
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  width: 65px;
+  height: 50px;
+  font-size: 30px;
+  cursor: pointer;
+  transition: transform 0.18s ease, background-color 0.18s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Flecha izquierda */
+#prevCard {
+  left: -200px;
+}
+
+/* Flecha derecha */
+#nextCard {
+  right: -200px;
+}
+
+/* Efecto hover */
+.arrow-btn:hover {
+  background-color: var(--accent-dark);
+  transform: translateY(-50%) scale(1.06); /* Mantiene centrado al agrandarse */
+}
+
+/* ======= BOTONES DE PÁGINA ======== */
+.buttons {
+  padding-top: 35px;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.buttons .preguntas a,
+.buttons .regresar a{
+  display: inline-block;
+  background-color: var(--accent);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 0.14s ease, opacity 0.14s ease, background-color 0.14s ease;
+}
+
+.buttons .regresar a{
+  background-color: var(--accent);
+  color: white;
+  border: 2px solid rgba(0,0,0,0.06);
+  font-weight: 600;
+}
+
+.buttons .preguntas a:hover{
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+.buttons .regresar a:hover{
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+/* Responsive adjustments */
+@media (max-width: 700px){
+  .card { height: 520px; }
+  #prevCard{ left: 8px; }
+  #nextCard{ right: 8px; }
+  .container{ padding: 0 10px; }
+  .card-front img{ width: 100%; }
+}
+/* --- CONTENEDOR FLEX GENERAL --- */
+.contenedor-flex {
+  display: flex;
+  height: 100vh;
+}
+
+/* --- LADO IZQUIERDO (FIJO) --- */
+.lado-izquierdo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #d9d9d9;
+  top: 0;
+  left: 0;
+  width: 30% ;
+  height: 100vh;
+  position: fixed;
+}
+
+
+.lado-izquierdo img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+}
+
+/* --- LADO DERECHO (AJUSTADO AL LADO IZQUIERDO) --- */
+.lado-derecho {
+  flex: 2;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 30%; /* evita que el contenido se oculte bajo el lado izquierdo */
+  font-size: 30px;
+}
+
+/* --- BARRA DE PROGRESO --- */
+#contenedor-barra {
+  height: 10px;
+  background: #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+#barra-progreso {
+  height: 10px;
+  width: 0;
+  background: #2C405B;
+  transition: width 0.3s ease;
+}
+
+/* --- OPCIONES DE PREGUNTA --- */
+#lista-opciones {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.opcion::first-letter {
+  font-weight: bold;
+  color: #2C405B;
+}
+
+li {
+  background: white;
+  padding: 15px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  list-style: none;
+}
+
+li:hover {
+  background: #e6e6e6;
+}
+
+li.selected {
+  border-color: #2C405B;
+}
+
+.opcion.correct {
+  border: 2px solid #4CAF50;
+  background-color: #C8E6C9;
+}
+
+.opcion.wrong {
+  border: 2px solid #fab1a0;
+  background-color: #ffe6e6;
+}
+
+/* --- RESULTADO --- */
+.resultado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  margin-top: 20px;
+  font-size: 35px;
+}
+
+.resultado.correcto {
+  border: 2px solid #4CAF50;
+  background-color: #C8E6C9;
+  color: #4CAF50;
+}
+
+.resultado.incorrecto {
+  border: 2px solid #d63031;
+  background-color: #FFCDD2;
+  color: #d63031;
+}
+
+/* --- BOTONES GENERALES --- */
+#btn-siguiente,
+#btn-verificar,
+.boton-siguiente {
+  background: #2C405B;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+  transition: background 0.3s;
+  margin: 10px;
+}
+
+#btn-siguiente:hover,
+#btn-verificar:hover,
+.boton-siguiente:hover {
+  background: #1e2f45;
+}
+
+/* --- BLOQUE FINAL --- */
+.bloque-final {
+  text-align: center;
+  background: #f0f0f0;
+  padding: 30px;
+  border-radius: 12px;
+  margin-top: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.bloque-final h2 {
+  font-size: 35px;
+  color: #2C405B;
+  margin-bottom: 15px;
+}
+
+.bloque-final p {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.botones-final button {
+  background-color: #2C405B;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+  transition: background 0.3s;
+}
+
+.botones-final button:hover {
+  background-color: #1e2f45;
+}
+
+.arrow-btn,
+#btn-ir-preg {
+  background: #2C405B;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 15px;
+}

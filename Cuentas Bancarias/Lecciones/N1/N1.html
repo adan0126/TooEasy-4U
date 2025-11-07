@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cuentas Bancarias</title>
+  <link rel="stylesheet" href="../EstiloLecciones.css" />
+</head>
+<body>
+  <main>
+    <!-- Sección de teoría con flashcards -->
+    <section class="container" id="cont">
+    <button class="arrow-btn" id="prevCard">←</button>
+
+    <!-- ======= CARD 1 ======= -->
+    <section class="card" id="card1">
+        <div class="card-inner">
+            <!-- Frente de la card -->
+            <div class="card-front">
+                <h2 class="card-title">Desventajas</h2>
+                <div class="card-image">
+                    <img src="img/card1.png" alt="404 : not found">
+                </div>
+            </div>
+
+            <!-- Parte trasera -->
+            <div class="card-back">
+                <div class="card-text" id="texto-card1"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= CARD 2 ======= -->
+    <section class="card" id="card2">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2 class="card-title">Términos clave</h2>
+                <div class="card-image">
+                    <img src="img/card2.png" alt="404 : not found">
+                </div>
+            </div>
+            <div class="card-back">
+                <div class="card-text" id="texto-card2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= CARD 3 ======= -->
+    <section class="card" id="card3">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2 class="card-title">¿Qué es un egreso o gasto?</h2>
+                <div class="card-image">
+                    <img src="img/card3.png" alt="404 : not found">
+                </div>
+            </div>
+            <div class="card-back">
+                <div class="card-text" id="texto-card3"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= CARD 4 ======= -->
+    <section class="card" id="card4">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2 class="card-title">Tipos de Gastos</h2>
+                <div class="card-image">
+                    <img src="img/card4.png" alt="404 : not found">
+                </div>
+            </div>
+            <div class="card-back">
+                <div class="card-text" id="texto-card4"></div>
+            </div>
+        </div>
+    </section>
+
+    <button class="arrow-btn" id="nextCard">→</button>
+
+    <!-- ======= BOTONES DE PÁGINA ======== -->
+
+    <div class="buttons">
+        <div class="preguntas"><a onclick="iniciarPreguntas()">Preguntas</a></div>
+        <div class="regresar"><a href="../../index.html">Regresar</a></div>
+    </div>
+
+  </section>
+
+    <!-- Contenedor principal del módulo -->
+    <div id="modulo-cuentas">
+        <div class="lado-izquierdo">
+            <img id="imagenPregunta" src="" alt="Imagen de la pregunta" />
+        </div>
+
+        <div class="lado-derecho">
+            <div id="contenedor-barra">
+            <div id="barra-progreso"></div>
+            </div>
+
+            <div id="preguntas">
+                <h3 id="pregunta"></h3>
+                <ul id="lista-opciones"></ul>
+                <div id="resultado" class="resultado" style="display:none;"></div>
+                <p id="puntaje" style="display:none;"></p>
+                <button id="btn-verificar" onclick="verificar()">Comprobar</button>
+                <button id="btn-siguiente" onclick="avanzarPregunta()" style="display:none;">Siguiente</button>
+            </div>
+
+            <div id="final-nivel" style="display:none;" class="bloque-final">
+                <h2>Resultados finales</h2>
+                <p id="mensaje-final"></p>
+                <div class="botones-final">
+                    <button onclick="reintentarNivel()">Reintentar</button>
+                    <button onclick="irMasLecciones()">Más lecciones</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </main>
+
+  <!-- Script del nivel -->
+  <script src="./N1.js"></script>
+</body>
+</html>
