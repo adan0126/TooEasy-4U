@@ -1,56 +1,56 @@
-// URL del HTML de "Más lecciones" (tú cambias esta)
-const urlMasLecciones = "/Tarjetas/index.html";
+// URL del HTML de "Más lecciones" (ajusta según tu estructura)
+const urlMasLecciones = "/Deudas y Creditos/index.html";
 
-// Preguntas del quiz (TARJETA DE CRÉDITO)
+// Preguntas del quiz
 const preguntas = [
   {
-    texto: "¿Qué es una tarjeta de crédito?",
+    texto: "¿Cuál es un ejemplo de deuda buena?",
     imagen: "/img/Imagen1.1.png",
     opciones: {
-      A: "Una tarjeta que permite gastar solo el dinero disponible en tu cuenta.",
-      B: "Una tarjeta que permite usar dinero prestado por el banco para hacer compras y pagarlo después.",
-      C: "Una tarjeta exclusiva para retirar efectivo."
+      A: "Comprar ropa con tarjeta sin necesitarla.",
+      B: "Un crédito para estudiar una carrera.",
+      C: "Usar crédito para pagar otra deuda más cara."
     },
     correcta: "B"
   },
   {
-    texto: "¿Qué ocurre si pagas el total de tu tarjeta de crédito antes de la fecha límite?",
-    imagen: "/img/Imagen1.1.png",
-    opciones: {
-      A: "Se te cobran intereses.",
-      B: "No se generan intereses.",
-      C: "El banco te cobra una comisión extra."
-    },
-    correcta: "B"
-  },
-  {
-    texto: "Las compras con tarjeta de crédito se descuentan inmediatamente del saldo de tu cuenta bancaria. Verdadero o falso:",
+    texto: "Las deudas malas se adquieren por impulso o sin planificación. Verdadero o falso:",
     imagen: "/img/Imagen1.1.png",
     opciones: {
       A: "Verdadero",
       B: "Falso"
     },
-    correcta: "B"
+    correcta: "A"
   },
   {
-    texto: "¿Cuál de las siguientes opciones describe mejor la diferencia entre una tarjeta de crédito y una de débito?",
+    texto: "Una deuda buena debe:",
     imagen: "/img/Imagen1.1.png",
     opciones: {
-      A: "La tarjeta de crédito usa dinero prestado y la de débito usa dinero propio.",
-      B: "Ambas funcionan igual, pero la de crédito tiene más comisiones.",
-      C: "La de crédito sirve solo para compras en línea."
+      A: "Generar valor o mejorar tu situación financiera.",
+      B: "Aumentar tus gastos sin beneficio.",
+      C: "Tener intereses muy altos."
     },
     correcta: "A"
   },
   {
-    texto: "¿Qué práctica ayuda a mantener una buena salud financiera con una tarjeta de crédito?",
+    texto: "¿Qué práctica te ayuda a evitar las deudas malas?",
     imagen: "/img/Imagen1.1.png",
     opciones: {
-      A: "Pagar únicamente el mínimo cada mes.",
-      B: "Retirar efectivo con frecuencia.",
-      C: "Pagar el total del estado de cuenta antes de la fecha límite."
+      A: "Comprar sin comparar precios.",
+      B: "Gastar más de lo que ganas.",
+      C: "Planificar antes de usar crédito."
     },
     correcta: "C"
+  },
+  {
+    texto: "Una deuda mala normalmente se usa para:",
+    imagen: "/img/Imagen1.1.png",
+    opciones: {
+      A: "Invertir en tu educación.",
+      B: "Gastos innecesarios o impulsivos.",
+      C: "Adquirir bienes que aumentan de valor."
+    },
+    correcta: "B"
   }
 ];
 
@@ -58,6 +58,7 @@ let preguntaActual = 0;
 let aciertos = 0;
 let seleccionUsuario = null;
 
+// Elementos del DOM
 const textoPregunta = document.getElementById("textoPregunta");
 const opcionesContainer = document.getElementById("opcionesContainer");
 const imagenPregunta = document.getElementById("imagenPregunta");
@@ -89,8 +90,7 @@ function cargarPregunta() {
 }
 
 function seleccionarOpcion(boton, key) {
-  const botones = document.querySelectorAll(".opcion");
-  botones.forEach(b => b.classList.remove("seleccionada"));
+  document.querySelectorAll(".opcion").forEach(b => b.classList.remove("seleccionada"));
   boton.classList.add("seleccionada");
   seleccionUsuario = key;
   botonComprobar.style.display = "block";
@@ -115,28 +115,15 @@ function verificarRespuesta(seleccion) {
     aciertos++;
     mostrarResultado(true);
   } else {
-    const textoCorrecta = pregunta.opciones[correcta];
-    mostrarResultado(false, correcta, textoCorrecta);
+    mostrarResultado(false, correcta, pregunta.opciones[correcta]);
   }
 }
 
 function mostrarResultado(esCorrecto, keyCorrecta = null, textoCorrecta = "") {
   resultado.className = "resultado " + (esCorrecto ? "correcto" : "incorrecto");
-
-  if (esCorrecto) {
-    resultado.innerHTML = `
-      <div style="font-weight:bold;">✅ ¡Correcto!</div>
-      <button class="boton-siguiente">Siguiente</button>
-    `;
-  } else {
-    resultado.innerHTML = `
-      <div>
-        ❌ Incorrecto<br>
-        La respuesta correcta era <strong>${keyCorrecta}) ${textoCorrecta}</strong>
-      </div>
-      <button class="boton-siguiente">Siguiente</button>
-    `;
-  }
+  resultado.innerHTML = esCorrecto
+    ? `<div style="font-weight:bold;">✅ ¡Correcto!</div><button class="boton-siguiente">Siguiente</button>`
+    : `<div>❌ Incorrecto<br>La respuesta correcta era <strong>${keyCorrecta}) ${textoCorrecta}</strong></div><button class="boton-siguiente">Siguiente</button>`;
 
   resultado.style.display = "flex";
   resultado.querySelector("button").addEventListener("click", siguientePregunta);
@@ -186,5 +173,5 @@ function actualizarProgreso() {
   barraProgreso.style.width = `${progreso}%`;
 }
 
-// Inicializar
+// Inicializar quiz
 cargarPregunta();

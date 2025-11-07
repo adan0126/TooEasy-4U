@@ -1,56 +1,55 @@
-// URL del HTML de "Más lecciones" (tú cambias esta)
+// URL del HTML de "Más lecciones" (puedes cambiar esta ruta)
 const urlMasLecciones = "/Tarjetas/index.html";
 
-// Preguntas del quiz (TARJETA DE CRÉDITO)
+// Preguntas del quiz
 const preguntas = [
   {
-    texto: "¿Qué es una tarjeta de crédito?",
+    texto: "¿Qué caracteriza principalmente a las tarjetas de crédito Oro?",
     imagen: "/img/Imagen1.1.png",
     opciones: {
-      A: "Una tarjeta que permite gastar solo el dinero disponible en tu cuenta.",
-      B: "Una tarjeta que permite usar dinero prestado por el banco para hacer compras y pagarlo después.",
-      C: "Una tarjeta exclusiva para retirar efectivo."
+      A: "Tienen un límite bajo y no generan recompensas.",
+      B: "Ofrecen beneficios adicionales y un límite de crédito más alto.",
+      C: "Solo se pueden usar en tiendas departamentales."
     },
     correcta: "B"
   },
   {
-    texto: "¿Qué ocurre si pagas el total de tu tarjeta de crédito antes de la fecha límite?",
+    texto: "Las tarjetas Platino están dirigidas a personas con ingresos altos y excelente historial crediticio. Verdadero o falso:",
     imagen: "/img/Imagen1.1.png",
     opciones: {
-      A: "Se te cobran intereses.",
-      B: "No se generan intereses.",
-      C: "El banco te cobra una comisión extra."
+      A: "Verdadero",
+      B: "Falso"
+    },
+    correcta: "A"
+  },
+  {
+    texto: "¿Cuál de las siguientes afirmaciones sobre las tarjetas Platino es correcta?",
+    imagen: "/img/Imagen1.1.png",
+    opciones: {
+      A: "Tienen comisiones anuales más bajas que las tarjetas básicas.",
+      B: "Ofrecen acceso a servicios premium como salas VIP o seguros de viaje.",
+      C: "No se pueden usar en el extranjero."
     },
     correcta: "B"
   },
   {
-    texto: "Las compras con tarjeta de crédito se descuentan inmediatamente del saldo de tu cuenta bancaria. Verdadero o falso:",
+    texto: "¿Qué diferencia importante existe entre las tarjetas Oro y Platino?",
+    imagen: "/img/Imagen1.1.png",
+    opciones: {
+      A: "Las Oro tienen límites y beneficios moderados; las Platino, límites y servicios más altos.",
+      B: "Las Oro son emitidas solo por tiendas, mientras que las Platino no.",
+      C: "Las Platino no generan historial crediticio."
+    },
+    correcta: "A"
+  },
+  {
+    texto: "Las tarjetas Oro y Platino son adecuadas para cualquier persona, incluso si no tiene ingresos estables. Verdadero o falso:",
     imagen: "/img/Imagen1.1.png",
     opciones: {
       A: "Verdadero",
       B: "Falso"
     },
     correcta: "B"
-  },
-  {
-    texto: "¿Cuál de las siguientes opciones describe mejor la diferencia entre una tarjeta de crédito y una de débito?",
-    imagen: "/img/Imagen1.1.png",
-    opciones: {
-      A: "La tarjeta de crédito usa dinero prestado y la de débito usa dinero propio.",
-      B: "Ambas funcionan igual, pero la de crédito tiene más comisiones.",
-      C: "La de crédito sirve solo para compras en línea."
-    },
-    correcta: "A"
-  },
-  {
-    texto: "¿Qué práctica ayuda a mantener una buena salud financiera con una tarjeta de crédito?",
-    imagen: "/img/Imagen1.1.png",
-    opciones: {
-      A: "Pagar únicamente el mínimo cada mes.",
-      B: "Retirar efectivo con frecuencia.",
-      C: "Pagar el total del estado de cuenta antes de la fecha límite."
-    },
-    correcta: "C"
   }
 ];
 

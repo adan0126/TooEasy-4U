@@ -129,3 +129,11 @@ body {
 .lista-temas button:hover {
   opacity: 0.8;
 }
+.lista-temas a{
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+}

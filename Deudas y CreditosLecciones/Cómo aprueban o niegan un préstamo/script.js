@@ -1,56 +1,56 @@
-// URL del HTML de "Más lecciones" (tú cambias esta)
-const urlMasLecciones = "/Tarjetas/index.html";
+// URL del HTML de "Más lecciones" (puedes cambiar esta ruta)
+const urlMasLecciones = "/Deudas y Creditos/index.html";
 
-// Preguntas del quiz (TARJETA DE CRÉDITO)
+// Preguntas del quiz
 const preguntas = [
   {
-    texto: "¿Qué es una tarjeta de crédito?",
+    texto: "¿Qué analiza un banco antes de aprobar un préstamo?",
     imagen: "/img/Imagen1.1.png",
     opciones: {
-      A: "Una tarjeta que permite gastar solo el dinero disponible en tu cuenta.",
-      B: "Una tarjeta que permite usar dinero prestado por el banco para hacer compras y pagarlo después.",
-      C: "Una tarjeta exclusiva para retirar efectivo."
+      A: "Solo la edad del solicitante.",
+      B: "El historial crediticio, ingresos y capacidad de pago.",
+      C: "El tipo de tarjeta que usa."
     },
     correcta: "B"
   },
   {
-    texto: "¿Qué ocurre si pagas el total de tu tarjeta de crédito antes de la fecha límite?",
-    imagen: "/img/Imagen1.1.png",
-    opciones: {
-      A: "Se te cobran intereses.",
-      B: "No se generan intereses.",
-      C: "El banco te cobra una comisión extra."
-    },
-    correcta: "B"
-  },
-  {
-    texto: "Las compras con tarjeta de crédito se descuentan inmediatamente del saldo de tu cuenta bancaria. Verdadero o falso:",
+    texto: "Un historial crediticio positivo aumenta las posibilidades de obtener un préstamo. Verdadero o falso:",
     imagen: "/img/Imagen1.1.png",
     opciones: {
       A: "Verdadero",
       B: "Falso"
     },
-    correcta: "B"
+    correcta: "A"
   },
   {
-    texto: "¿Cuál de las siguientes opciones describe mejor la diferencia entre una tarjeta de crédito y una de débito?",
+    texto: "¿Qué documento suele pedirse al solicitar un crédito?",
     imagen: "/img/Imagen1.1.png",
     opciones: {
-      A: "La tarjeta de crédito usa dinero prestado y la de débito usa dinero propio.",
-      B: "Ambas funcionan igual, pero la de crédito tiene más comisiones.",
-      C: "La de crédito sirve solo para compras en línea."
+      A: "Comprobante de ingresos.",
+      B: "Contrato de renta.",
+      C: "Boleta escolar."
     },
     correcta: "A"
   },
   {
-    texto: "¿Qué práctica ayuda a mantener una buena salud financiera con una tarjeta de crédito?",
+    texto: "¿Qué práctica puede hacer que te nieguen un préstamo?",
     imagen: "/img/Imagen1.1.png",
     opciones: {
-      A: "Pagar únicamente el mínimo cada mes.",
-      B: "Retirar efectivo con frecuencia.",
-      C: "Pagar el total del estado de cuenta antes de la fecha límite."
+      A: "Pagar siempre a tiempo.",
+      B: "Tener demasiadas deudas activas.",
+      C: "Tener un ahorro constante."
     },
-    correcta: "C"
+    correcta: "B"
+  },
+  {
+    texto: "¿Por qué es importante la relación con el banco?",
+    imagen: "/img/Imagen1.1.png",
+    opciones: {
+      A: "Porque los clientes confiables pueden recibir mejores condiciones.",
+      B: "Porque el banco regala dinero.",
+      C: "Porque no influye en la aprobación."
+    },
+    correcta: "A"
   }
 ];
 
