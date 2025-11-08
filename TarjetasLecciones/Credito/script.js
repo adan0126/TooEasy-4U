@@ -1,56 +1,56 @@
 // URL del HTML de "Más lecciones" (tú cambias esta)
 const urlMasLecciones = "/Tarjetas/index.html";
 
-// Preguntas del quiz
+// Preguntas del quiz (TARJETA DE CRÉDITO)
 const preguntas = [
   {
-    texto: "¿Qué es una tarjeta de débito?",
+    texto: "¿Qué es una tarjeta de crédito?",
     imagen: "/img/Imagen1.1.png",
     opciones: {
-      A: "Una tarjeta que te permite gastar dinero prestado por el banco.",
-      B: "Una tarjeta vinculada a una cuenta bancaria, que descuenta el dinero directamente al usarla.",
-      C: "Una tarjeta que solo sirve para compras en línea."
+      A: "Una tarjeta que permite gastar solo el dinero disponible en tu cuenta.",
+      B: "Una tarjeta que permite usar dinero prestado por el banco para hacer compras y pagarlo después.",
+      C: "Una tarjeta exclusiva para retirar efectivo."
     },
     correcta: "B"
   },
   {
-    texto: "¿Qué sucede si intentas pagar con tu tarjeta de débito y no tienes suficiente saldo en tu cuenta?",
+    texto: "¿Qué ocurre si pagas el total de tu tarjeta de crédito antes de la fecha límite?",
     imagen: "/img/Imagen1.1.png",
     opciones: {
-      A: "El banco te da crédito temporal.",
-      B: "La operación se cancela porque no hay fondos suficientes.",
-      C: "El pago se completa y el saldo queda negativo."
+      A: "Se te cobran intereses.",
+      B: "No se generan intereses.",
+      C: "El banco te cobra una comisión extra."
     },
     correcta: "B"
   },
   {
-    texto: "Una ventaja principal de la tarjeta de débito es que evita endeudarte. Verdadero o falso:",
+    texto: "Las compras con tarjeta de crédito se descuentan inmediatamente del saldo de tu cuenta bancaria. Verdadero o falso:",
     imagen: "/img/Imagen1.1.png",
     opciones: {
       A: "Verdadero",
       B: "Falso"
     },
+    correcta: "B"
+  },
+  {
+    texto: "¿Cuál de las siguientes opciones describe mejor la diferencia entre una tarjeta de crédito y una de débito?",
+    imagen: "/img/Imagen1.1.png",
+    opciones: {
+      A: "La tarjeta de crédito usa dinero prestado y la de débito usa dinero propio.",
+      B: "Ambas funcionan igual, pero la de crédito tiene más comisiones.",
+      C: "La de crédito sirve solo para compras en línea."
+    },
     correcta: "A"
   },
   {
-    texto: "¿Cuál de las siguientes acciones es una buena práctica de seguridad al usar tu tarjeta de débito?",
+    texto: "¿Qué práctica ayuda a mantener una buena salud financiera con una tarjeta de crédito?",
     imagen: "/img/Imagen1.1.png",
     opciones: {
-      A: "Compartir tu PIN con alguien de confianza.",
-      B: "Revisar tus estados de cuenta con frecuencia.",
-      C: "Guardar tu tarjeta y tu NIP juntos por comodidad."
+      A: "Pagar únicamente el mínimo cada mes.",
+      B: "Retirar efectivo con frecuencia.",
+      C: "Pagar el total del estado de cuenta antes de la fecha límite."
     },
-    correcta: "B"
-  },
-  {
-    texto: "¿Qué característica distingue a una tarjeta de débito de una de crédito?",
-    imagen: "/img/Imagen1.1.png",
-    opciones: {
-      A: "Permite gastar más de lo que tienes disponible.",
-      B: "Está vinculada directamente a una cuenta bancaria.",
-      C: "Genera intereses sobre tus compras."
-    },
-    correcta: "B"
+    correcta: "C"
   }
 ];
 
