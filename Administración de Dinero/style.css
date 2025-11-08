@@ -129,3 +129,62 @@ body {
 .lista-temas button:hover {
   opacity: 0.8;
 }
+
+/* ======== LISTA DE TEMAS ======== */
+.lista-temas {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Cada ítem tendrá el botón y el texto alineados correctamente */
+.lista-temas li {
+  display: flex;
+  align-items: center; /* Centra verticalmente botón y texto */
+  gap: 10px;
+  font-size: 16px;
+}
+
+/* Estilo del botón redondo */
+.lista-temas button {
+  background-color: #B6823E;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Efecto visual al pasar el cursor */
+.lista-temas button:hover {
+  opacity: 0.8;
+  transform: scale(1.05); /* 🔹 Leve aumento al pasar el cursor */
+}
+
+/* Los enlaces que rodean el botón y el texto */
+.tema {
+  display: flex;              /* Coloca botón y texto en línea */
+  align-items: center;        /* Alinea verticalmente al centro */
+  gap: 10px;                  /* Espacio entre botón y texto */
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+/* Efecto hover sobre el texto (subrayado y color más oscuro) */
+.tema:hover span {
+  text-decoration: underline;
+  color: #8B5E25; /* tono más oscuro del botón */
+}
+
+/* Asegura que el texto se mantenga alineado */
+.tema span {
+  vertical-align: middle;
+}
