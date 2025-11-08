@@ -1,19 +1,22 @@
-/* olvidoContrasena.js - Verificación de palabra de seguridad Too-Easy */
+/* olvidoContrasena.js - Recuperación de acceso Too-Easy */
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('.formulario');
-  const inputRespuesta = document.getElementById('Nombre');
+  const inputNombre = document.getElementById('Nombre');
+  const inputSeguridad = document.getElementById('seguridad');
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const respuestaIngresada = inputRespuesta.value.trim();
-    if (!respuestaIngresada) {
-      alert('⚠️ Ingresa tu palabra clave para continuar.');
+    const nombre = inputNombre.value.trim();
+    const seguridadIngresada = inputSeguridad.value.trim();
+
+    if (!nombre || !seguridadIngresada) {
+      alert('⚠️ Ingresa tu nombre de usuario y tu palabra de seguridad.');
       return;
     }
 
-    // Leer usuarios del localStorage (por ahora)
+    // Leer usuarios del localStorage
     const usuarios = JSON.parse(localStorage.getItem('te_users') || '[]');
 
     if (usuarios.length === 0) {
@@ -21,17 +24,26 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Buscar usuario con esa palabra de seguridad
+    // Buscar usuario
     const usuarioEncontrado = usuarios.find(
-      (u) => u.seguridad?.toLowerCase() === respuestaIngresada.toLowerCase()
+      (u) => u.nombre.toLowerCase() === nombre.toLowerCase()
     );
 
-    if (usuarioEncontrado) {
+    if (!usuarioEncontrado) {
+      alert('❌ Usuario no encontrado. Verifica el nombre ingresado.');
+      return;
+    }
+
+    // Verificar palabra de seguridad
+    if (usuarioEncontrado.seguridad.toLowerCase() === seguridadIngresada.toLowerCase()) {
+      // Guardar sesión actual (como en iniciarSesion.js)
+      localStorage.setItem('usuario_actual', JSON.stringify(usuarioEncontrado));
+
       alert(`✅ Verificación exitosa. Bienvenido/a, ${usuarioEncontrado.nombre}!`);
-      // Redirigir a la pantalla de inicio (o cambio de contraseña)
-      window.location.href = '/Pantalla sesion iniciada/index.html';
+      // Redirigir al perfil directamente
+      window.location.href = '/Perfil/index.html';
     } else {
-      alert('❌ Palabra clave incorrecta. Intenta de nuevo.');
+      alert('❌ Palabra de seguridad incorrecta. Intenta de nuevo.');
     }
   });
 });

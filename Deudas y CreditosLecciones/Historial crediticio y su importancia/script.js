@@ -1,54 +1,54 @@
-// URL del HTML de "Más lecciones" (tú cambias esta)
-const urlMasLecciones = "/Tarjetas/index.html";
+// URL del HTML de "Más lecciones" (puedes cambiar esta ruta según tu proyecto)
+const urlMasLecciones = "/Deudas y Creditos/index.html";
 
-// Preguntas del quiz (TARJETA DE CRÉDITO)
+// Preguntas del quiz
 const preguntas = [
   {
-    texto: "¿Qué es una tarjeta de crédito?",
+    texto: "¿Qué es el historial crediticio?",
     imagen: "/img/Imagen1.1.png",
     opciones: {
-      A: "Una tarjeta que permite gastar solo el dinero disponible en tu cuenta.",
-      B: "Una tarjeta que permite usar dinero prestado por el banco para hacer compras y pagarlo después.",
-      C: "Una tarjeta exclusiva para retirar efectivo."
+      A: "Un documento de tus ingresos mensuales.",
+      B: "Un registro de cómo pagas tus deudas y créditos.",
+      C: "Un resumen de tus gastos diarios."
     },
     correcta: "B"
   },
   {
-    texto: "¿Qué ocurre si pagas el total de tu tarjeta de crédito antes de la fecha límite?",
-    imagen: "/img/Imagen1.1.png",
-    opciones: {
-      A: "Se te cobran intereses.",
-      B: "No se generan intereses.",
-      C: "El banco te cobra una comisión extra."
-    },
-    correcta: "B"
-  },
-  {
-    texto: "Las compras con tarjeta de crédito se descuentan inmediatamente del saldo de tu cuenta bancaria. Verdadero o falso:",
+    texto: "Un buen historial crediticio te permite acceder a mejores condiciones en préstamos. Verdadero o falso:",
     imagen: "/img/Imagen1.1.png",
     opciones: {
       A: "Verdadero",
       B: "Falso"
     },
+    correcta: "A"
+  },
+  {
+    texto: "¿Qué hábito ayuda a mantener un historial positivo?",
+    imagen: "/img/Imagen1.1.png",
+    opciones: {
+      A: "Pagar solo el mínimo.",
+      B: "Pagar siempre a tiempo.",
+      C: "No revisar tus estados de cuenta."
+    },
     correcta: "B"
   },
   {
-    texto: "¿Cuál de las siguientes opciones describe mejor la diferencia entre una tarjeta de crédito y una de débito?",
+    texto: "¿Qué porcentaje del ingreso mensual se recomienda no exceder en deudas?",
     imagen: "/img/Imagen1.1.png",
     opciones: {
-      A: "La tarjeta de crédito usa dinero prestado y la de débito usa dinero propio.",
-      B: "Ambas funcionan igual, pero la de crédito tiene más comisiones.",
-      C: "La de crédito sirve solo para compras en línea."
+      A: "30%",
+      B: "60%",
+      C: "90%"
     },
     correcta: "A"
   },
   {
-    texto: "¿Qué práctica ayuda a mantener una buena salud financiera con una tarjeta de crédito?",
+    texto: "¿Qué ocurre si no pagas tus deudas puntualmente?",
     imagen: "/img/Imagen1.1.png",
     opciones: {
-      A: "Pagar únicamente el mínimo cada mes.",
-      B: "Retirar efectivo con frecuencia.",
-      C: "Pagar el total del estado de cuenta antes de la fecha límite."
+      A: "Mejora tu score crediticio.",
+      B: "No afecta tu historial.",
+      C: "Se daña tu historial y puede impedir futuros préstamos."
     },
     correcta: "C"
   }

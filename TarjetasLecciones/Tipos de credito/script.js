@@ -1,56 +1,55 @@
-// URL del HTML de "Más lecciones" (tú cambias esta)
+// URL del HTML de "Más lecciones" (puedes cambiarla según tu estructura)
 const urlMasLecciones = "/Tarjetas/index.html";
 
-// Preguntas del quiz (TARJETA DE CRÉDITO)
+// Preguntas del quiz: TIPOS DE TARJETAS DE CRÉDITO
 const preguntas = [
   {
-    texto: "¿Qué es una tarjeta de crédito?",
+    texto: "¿Cuál de las siguientes opciones describe mejor una tarjeta de crédito básica?",
     imagen: "/img/Imagen1.1.png",
     opciones: {
-      A: "Una tarjeta que permite gastar solo el dinero disponible en tu cuenta.",
-      B: "Una tarjeta que permite usar dinero prestado por el banco para hacer compras y pagarlo después.",
-      C: "Una tarjeta exclusiva para retirar efectivo."
+      A: "Es una tarjeta exclusiva para compras en tiendas departamentales.",
+      B: "Ofrece beneficios premium y requiere ingresos altos.",
+      C: "Es una tarjeta sencilla con límite bajo, ideal para quienes inician su historial crediticio."
+    },
+    correcta: "C"
+  },
+  {
+    texto: "Las tarjetas clásicas suelen ofrecer programas de recompensas y requieren comprobar ingresos estables. Verdadero o falso:",
+    imagen: "/img/Imagen1.1.png",
+    opciones: {
+      A: "Verdadero",
+      B: "Falso"
+    },
+    correcta: "A"
+  },
+  {
+    texto: "¿Qué característica distingue a las tarjetas departamentales de las demás?",
+    imagen: "/img/Imagen1.1.png",
+    opciones: {
+      A: "Solo se pueden usar en comercios o tiendas específicas.",
+      B: "Permiten usar dinero directamente de tu cuenta de ahorro.",
+      C: "No generan intereses bajo ninguna circunstancia."
+    },
+    correcta: "A"
+  },
+  {
+    texto: "Una persona que está comenzando a manejar crédito debería solicitar primero:",
+    imagen: "/img/Imagen1.1.png",
+    opciones: {
+      A: "Una tarjeta clásica.",
+      B: "Una tarjeta básica.",
+      C: "Una tarjeta oro o platino."
     },
     correcta: "B"
   },
   {
-    texto: "¿Qué ocurre si pagas el total de tu tarjeta de crédito antes de la fecha límite?",
-    imagen: "/img/Imagen1.1.png",
-    opciones: {
-      A: "Se te cobran intereses.",
-      B: "No se generan intereses.",
-      C: "El banco te cobra una comisión extra."
-    },
-    correcta: "B"
-  },
-  {
-    texto: "Las compras con tarjeta de crédito se descuentan inmediatamente del saldo de tu cuenta bancaria. Verdadero o falso:",
+    texto: "Las tarjetas departamentales siempre están respaldadas por un banco. Verdadero o falso:",
     imagen: "/img/Imagen1.1.png",
     opciones: {
       A: "Verdadero",
       B: "Falso"
     },
     correcta: "B"
-  },
-  {
-    texto: "¿Cuál de las siguientes opciones describe mejor la diferencia entre una tarjeta de crédito y una de débito?",
-    imagen: "/img/Imagen1.1.png",
-    opciones: {
-      A: "La tarjeta de crédito usa dinero prestado y la de débito usa dinero propio.",
-      B: "Ambas funcionan igual, pero la de crédito tiene más comisiones.",
-      C: "La de crédito sirve solo para compras en línea."
-    },
-    correcta: "A"
-  },
-  {
-    texto: "¿Qué práctica ayuda a mantener una buena salud financiera con una tarjeta de crédito?",
-    imagen: "/img/Imagen1.1.png",
-    opciones: {
-      A: "Pagar únicamente el mínimo cada mes.",
-      B: "Retirar efectivo con frecuencia.",
-      C: "Pagar el total del estado de cuenta antes de la fecha límite."
-    },
-    correcta: "C"
   }
 ];
 
