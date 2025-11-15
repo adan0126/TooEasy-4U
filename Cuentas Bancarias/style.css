@@ -93,7 +93,7 @@ body {
   margin-bottom: 20px;
   font-weight: bold;
   font-size: 22px;
-  border-bottom: 6px solid #B6823E;
+  border-bottom: 6px solid #2C405B;
 }
 
 /* ======== LISTA DE TEMAS ======== */
@@ -112,7 +112,7 @@ body {
 }
 
 .lista-temas button {
-  background-color: #B6823E;
+  background-color: #2C405B;
   border: none;
   border-radius: 50%;
   width: 35px;
